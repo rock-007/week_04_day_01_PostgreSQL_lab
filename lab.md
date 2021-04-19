@@ -23,6 +23,7 @@ Use the supplied data as the source of data to answer the questions. Copy the SQ
 ## Questions
 
 1.  Return ALL the data in the 'movies' table.
+
 marvel=# SELECT * FROM movies;
  id |                title                | year | show_time
 ----+-------------------------------------+------+-----------
@@ -46,6 +47,7 @@ marvel=# SELECT * FROM movies;
  18 | Thor: Ragnarok                      | 2017 | 22:10
  19 | Black Panther                       | 2018 | 21:00
 2.  Return ONLY the name column from the 'people' table
+
 marvel=# SELECT name from people;
          name
 ----------------------
@@ -67,10 +69,12 @@ marvel=# SELECT name from people;
  Groundskeeper Willie
 
 3.  Oops! Someone spelled Krusty The Clown's name wrong! Change it to reflect the proper spelling (Crusty should be Krusty).
+
 marvel=# UPDATE people set name = 'Krusty the Clown' WHERE id=13;
 UPDATE 1
 
 4.  Return ONLY Homer Simpson's name from the 'people' table.
+
 marvel=# SELECT name FROM people WHERE name='Homer Simpson';
      name
 ---------------
@@ -78,9 +82,11 @@ marvel=# SELECT name FROM people WHERE name='Homer Simpson';
 (1 row)
 
 5.  The cinema is showing 'Batman Begins', but Batman is DC, not Marvel! Delete the entry from the 'movies' table.
+
 marvel=# DELETE FROM movies WHERE title= 'Batman Begins';
 DELETE 1
 6.  We forgot one of the main characters! Add Bart Simpson to the 'people' table
+
 marvel=# INSERT INTO people(name) VALUES('Bart Simpson');
 INSERT 0 1
 
@@ -88,14 +94,17 @@ INSERT 0 1
 marvel=# DELETE FROM people WHERE name= 'Eric Cartman';
 DELETE 1
 8.  The cinema has just heard that they will be holding an exclusive midnight showing of 'Avengers: Infinity War'!! Create a new entry in the 'movies' table to reflect this.
+
 marvel=# INSERT INTO movies(title ,year,show_time) VALUES ('Avengers Infinity War', 2015, '21:20');
 INSERT 0 1
 9.  The cinema would like to make the Iron Man movies a triple billing. Find out the show time of "Iron Man 2" and set the show time of "Iron Man 3" to start two hours later.
+
 marvel=# UPDATE movies SET show_time = '18:45'  WHERE title= 'Iron Man 3';
 UPDATE 1
 
 ## Extension
 
 1.  Research how to delete multiple entries from your table in a single command.
+
 marvel=# DELETE FROM people WHERE  id IN (2,3,4,6,7);
 DELETE 5
